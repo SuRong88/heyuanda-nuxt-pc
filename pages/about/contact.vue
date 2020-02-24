@@ -61,6 +61,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios';
 import URL from '~/plugins/url';
 import vNav from '@/components/vNav.vue';
 import vAbout from '@/components/aboutNav.vue';
@@ -99,27 +100,26 @@ export default {
             ]
         };
     },
+    async asyncData({ route, app }) {
+        let seoKey = route.path;
+        let [Res] = await Promise.all([
+            axios.get(URL.getSEOInfo, {
+                params: {
+                    name: seoKey
+                }
+            })
+        ]).catch(err => {
+            console.log(err);
+        });
+        return {
+            SEOInfo: Res.data.data
+        };
+    },
     created() {
-        let seoKey = this.$route.path;
         if (this.$store.state.webInfo.work_time) {
             this.workDay = this.webInfo.work_time.split('|')[0];
             this.workTime = this.webInfo.work_time.split('|')[1];
         }
-        this.$admin_base(
-            [
-                this.$get(URL.getSEOInfo, {
-                    // name: 'about7',
-                    name: seoKey
-                })
-            ],
-            [
-                res => {
-                    console.log('seo');
-                    console.log(res.data);
-                    this.SEOInfo = res.data;
-                }
-            ]
-        );
     },
     mounted() {
         // 导航栏显示背景颜色,fixed

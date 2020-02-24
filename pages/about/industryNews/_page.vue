@@ -33,7 +33,7 @@
                     </div>
                     <div class="item-m">
                         <div class="item-m-tit">{{ item.name }}</div>
-                        <div class="item-m-txt">{{ item.body }}</div>
+                        <div class="item-m-txt" v-html="item.body"></div>
                     </div>
                     <div class="item-r"><img class="item-img" :src="item.cover" alt="" /></div>
                 </nuxt-link>
@@ -47,7 +47,7 @@
                     layout="prev, pager, next"
                     :page-size="limit"
                     :current-page="current_page"
-                    :total="total_page"
+                    :page-count="total_page"
                 ></el-pagination>
             </div>
         </div>
@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios';
 import URL from '~/plugins/url';
 import vNav from '@/components/vNav.vue';
 import vAbout from '@/components/aboutNav.vue';
@@ -87,44 +88,33 @@ export default {
             ]
         };
     },
-    created() {
-        let seoKey = this.$route.path;
-        this.$admin_base(
-            [
-                this.$get(URL.getSEOInfo, {
-                    // name: 'about5',
+    async asyncData({ route, app }) {
+        let seoKey = route.path;
+        let [Res, pageRes] = await Promise.all([
+            axios.get(URL.getSEOInfo, {
+                params: {
                     name: seoKey
-                })
-            ],
-            [
-                res => {
-                    console.log('seo');
-                    console.log(res.data);
-                    this.SEOInfo = res.data;
                 }
-            ]
-        );
-        this.current_page = this.$route.params.page * 1 || 1;
-        this.$admin_base(
-            [
-                this.$get(URL.getArticleList, {
+            }),
+            axios.get(URL.getArticleList, {
+                params: {
                     type: 2,
-                    page: this.current_page,
-                    rownum: this.limit
-                })
-            ],
-            [
-                res => {
-                    console.log('行业动态');
-                    console.log(res.data);
-                    this.list = res.data.list || [];
-                    let pagination = res.data.pagination;
-                    this.limit = pagination.rownum * 1;
-                    this.current_page = pagination.current * 1;
-                    this.total_page = pagination.total_page * 1;
+                    page: route.params.page,
+                    rownum: 8
                 }
-            ]
-        );
+            })
+        ]).catch(err => {
+            console.log(err);
+        });
+        let seoData = Res.data.data;
+        let pageData = pageRes.data.data;
+        return {
+            SEOInfo: seoData,
+            list: pageData.list || [],
+            limit: pageData.pagination.rownum * 1,
+            current_page: pageData.pagination.current * 1,
+            total_page: pageData.pagination.total_page * 1
+        };
     },
     mounted() {
         // 导航栏显示背景颜色,fixed
@@ -136,7 +126,7 @@ export default {
             list: [],
             limit: 8,
             current_page: 1,
-            total_page: 99,
+            total_page: 0,
             // banner导航下标
             index: 'industry',
             // 展示导航栏背景颜色

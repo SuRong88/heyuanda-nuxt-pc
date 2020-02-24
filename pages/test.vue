@@ -1,43 +1,19 @@
 <template>
-  <div></div>
+    <div class="test-page">
+        <v-nav></v-nav>
+        <v-footer></v-footer>
+    </div>
 </template>
 
 <script>
-  import URL from '~/plugins/url'
-  export default {
-    created() {
-      // console.log(URL);
-      this.$admin_base([
-        this.$get(URL.getArticleType)
-      ], [
-        function(res) {
-          console.log(res.data);
-        }
-      ])
-      this.$admin_base([
-        this.$get(URL.getWebInfo)
-      ], [
-        function(res) {
-          console.log(res.data);
-        }
-      ])
-      // this.$admin_base([
-      //   this.$get(URL.getArticleList)
-      // ], [
-      //   function(res) {
-      //     console.log(res.data);
-      //   }
-      // ])
-      // this.$admin_base([
-      //   this.$get(URL.getArticle, null)
-      // ], [
-      //   (res) => {
-      //      console.log(res.data);
-      //   }
-      // ]);
+import vNav from '@/components/vNav.vue';
+import vFooter from '@/components/vFooter.vue';
+export default {
+    components: {
+        vNav,
+        vFooter
     }
-  }
+};
 </script>
 
-<style>
-</style>
+<style></style>

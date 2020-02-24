@@ -63,6 +63,7 @@
     </div>
 </template>
 <script>
+import axios from '~/plugins/axios';
 import URL from '~/plugins/url';
 import vNav from '@/components/vNav.vue';
 import vSidebar from '@/components/vSidebar.vue';
@@ -96,23 +97,20 @@ export default {
             return this.$store.state.webInfo;
         }
     },
-    created() {
-        let seoKey = this.$route.path;
-        this.$admin_base(
-            [
-                this.$get(URL.getSEOInfo, {
-                    // name: 'product1'
+    async asyncData({ route, app }) {
+        let seoKey = route.path;
+        let [Res] = await Promise.all([
+            axios.get(URL.getSEOInfo, {
+                params: {
                     name: seoKey
-                })
-            ],
-            [
-                res => {
-                    console.log('seo');
-                    console.log(res.data);
-                    this.SEOInfo = res.data;
                 }
-            ]
-        );
+            })
+        ]).catch(err => {
+            console.log(err);
+        });
+        return {
+            SEOInfo: Res.data.data
+        };
     },
     data() {
         let that = this;
@@ -120,7 +118,7 @@ export default {
             SEOInfo: {},
             swiperOption: {
                 loop: false,
-                speed:600,
+                speed: 600,
                 direction: 'vertical',
                 mousewheelControl: true,
                 simulateTouch: false,

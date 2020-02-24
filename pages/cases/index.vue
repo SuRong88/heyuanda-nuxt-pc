@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import axios from '~/plugins/axios';
 import URL from '~/plugins/url';
 import vNav from '@/components/vNav.vue';
 import vFooter from '@/components/vFooter.vue';
@@ -58,23 +59,22 @@ export default {
             ]
         };
     },
-    created() {
-        let seoKey = this.$route.path;
-        this.$admin_base(
-            [
-                this.$get(URL.getSEOInfo, {
-                    // name: 'cases15',
+    async asyncData({ route, app }) {
+        let seoKey = route.path;
+        let [Res] = await Promise.all([
+            axios.get(URL.getSEOInfo, {
+                params: {
                     name: seoKey
-                })
-            ],
-            [
-                res => {
-                    console.log('seo');
-                    console.log(res.data);
-                    this.SEOInfo = res.data;
                 }
-            ]
-        );
+            })
+        ]).catch(err => {
+            console.log(err);
+        });
+        return {
+            SEOInfo: Res.data.data
+        };
+    },
+    created() {
         switch (this.$route.query.type) {
             case 'all':
                 this.navIndex = 0;

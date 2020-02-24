@@ -1,11 +1,10 @@
 import Vue from 'vue'
-
 let loading = null;
 
 export default ({
     app
 }, inject) => {
-
+    
     // 错误提示
     inject('errorToast', function(msg) {
             if (msg) {
