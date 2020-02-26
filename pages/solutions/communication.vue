@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">
                 基于和元达大数据分析平台，打破运营商数据孤岛，贯通通信业务数据与行为业务数据，运用网站统计分析、APP数据分析、小程序数据分析等领域的数据分析方法，进行深入的用户行为分析,挖掘新的增长点。
@@ -82,6 +86,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

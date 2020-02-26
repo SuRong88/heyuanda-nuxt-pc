@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">
                 基于机器学习的异常发现、关联定位和分析处理，针对业务系统所有层级的日志数据，提供数据搜索、报表和可视化展现等功能。通过智能运维平台可以快速构建分布式应用程序。
@@ -96,6 +100,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

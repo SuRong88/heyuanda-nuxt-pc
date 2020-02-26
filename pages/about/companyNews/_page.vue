@@ -27,13 +27,15 @@
                     class="news-item flex"
                     :class="{ latest: index == 0 }"
                 >
-                    <div class="item-l">
-                        <div class="date">{{ item.create_time | formatDate('MM-dd') }}</div>
-                        <div class="year">{{ item.create_time | formatDate('yyyy') }}</div>
-                    </div>
-                    <div class="item-m">
-                        <div class="item-m-tit">{{ item.name }}</div>
-                        <div class="item-m-txt">{{ item.body }}</div>
+                    <div class="item-lm-box flex">
+                        <div class="item-l">
+                            <div class="date">{{ item.create_time | formatDate('MM-dd') }}</div>
+                            <div class="year">{{ item.create_time | formatDate('yyyy') }}</div>
+                        </div>
+                        <div class="item-m">
+                            <div class="item-m-tit">{{ item.name }}</div>
+                            <div class="item-m-txt">{{ item.body }}</div>
+                        </div>
                     </div>
                     <div class="item-r"><img class="item-img" :src="item.cover" alt="" /></div>
                 </nuxt-link>

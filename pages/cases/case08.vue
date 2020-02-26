@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content wrapper">
+            <nuxt-link to="/cases" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <!-- 案例描述 -->
             <section class="sec sec01">
                 <h3 class="common-tit">案例描述</h3>
@@ -65,6 +69,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     async asyncData({ route, app }) {
         let seoKey = route.path;

@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">
                 结合虚拟化及电子化交易将成为大数据时代金融行业发展的趋势特征，基于和元达大数据分析平台，充分整合用户行为数据与业务数据，通过对用户网站浏览行为、APP使用行为、小程序使用行为以及用户的基础通信行为进行综合分析，助力企业培育自身的交叉销售、投资管理市场份额及能力等信息核心竞争力。
@@ -78,6 +82,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

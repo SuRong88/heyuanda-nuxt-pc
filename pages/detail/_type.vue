@@ -28,6 +28,7 @@
                             }
                         }"
                         v-for="(item, index) in detail.recommend"
+                        v-if="item"
                         :key="index"
                         class="recom-item"
                     >

@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content wrapper">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <section class="sec-box01">
                 <h2 class="title">方案概述</h2>
                 <div class="desc desc-center">通过集群应用、集中管理、多租户、资源按需动态分配等方式提供安 全可靠的云备份服务</div>
@@ -54,6 +58,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

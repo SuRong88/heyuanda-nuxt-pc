@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <section class="section01">
                 <p class="sec-desc">
                     和元达与中国移动通信集团广东有限公司、爱立信、IBM等合作伙伴共同打造农产品安全信任链。广东移动基于区块链和物联网技术推出的“和信菜篮子”项目正式在广东省内的云浮杏花鸡农场，河源小黄牛散养基地，从化蔬菜种植基地落地应用。用户只需通过广东移动旗下的电商品牌“岭南生活”APP，即可购买到来自上述三处农场基地的可溯源、有保障的放心肉菜。这一项目将打造创新、协调、绿色、开放、共享的智慧农业，让老百姓吃上安全、健康的食品，更好地支持和落实十九大提出的“食品安全”战略。
@@ -93,6 +97,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

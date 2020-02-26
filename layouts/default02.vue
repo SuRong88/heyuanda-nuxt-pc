@@ -1,13 +1,15 @@
 <template>
     <div>
         <nuxt />
-        <!-- <div v-show="show" @click="scrollTop" class="back-top-btn"></div> -->
+        <div v-show="show" @click="scrollTop" class="back-top-btn"></div>
     </div>
 </template>
 <script>
 import axios from '~/plugins/axios';
 import URL from '~/plugins/url';
 export default {
+    name: 'default02',
+
     components: {},
 
     head() {
@@ -29,19 +31,27 @@ export default {
         });
     },
 
-    // mounted() {
-    //     window.addEventListener('scroll',() => {
-    //         this.show = document.documentElement.scrollTop > 500 ? true : false;
-    //     })
-    //     window.scroll();
-    // },
-    
-    // data(){
-    //     return{
-    //         show:false
-    //     }
-    // },
-    
+    mounted() {
+        let height = 500;
+        if (document.documentElement.clientHeight) {
+            height = document.documentElement.clientHeight;
+        } else if (document.documentElement.clientHeight) {
+            height = document.documentElement.clientHeight;
+        } else {
+            height = document.documentElement.clientHeight;
+        }
+        window.addEventListener('scroll', () => {
+            this.show = document.documentElement.scrollTop > height ? true : false;
+        });
+        window.scroll();
+    },
+
+    data() {
+        return {
+            show: false
+        };
+    },
+
     computed: {},
 
     methods: {

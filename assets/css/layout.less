@@ -932,8 +932,8 @@ body .layui-layer-title {
             text-align: left;
             text-indent: 2em;
             width: 980px;
-            &.center{
-              text-align: center;
+            &.center {
+                text-align: center;
                 text-indent: 0;
             }
         }
@@ -1786,7 +1786,7 @@ body .layui-layer-title {
         }
     }
     .banner-txt-box {
-        width: 542px;
+        width: 548px;
         margin-left: 6.2%;
         opacity: 0;
         padding-top: 6%;
@@ -3653,16 +3653,18 @@ body .layui-layer-title {
         &:last-child {
             margin-bottom: 0;
         }
-        &.latest {
-            .date,
-            .year {
-                color: #177dff !important;
-            }
-            .item-m {
-                padding: 8px 138px 8px 90px;
-                &:before {
-                    width: 60px;
-                    background-color: #177dff;
+        .item-lm-box {
+            &:hover {
+                .date,
+                .year {
+                    color: #177dff !important;
+                }
+                .item-m {
+                    padding: 8px 138px 8px 90px;
+                    &:before {
+                        width: 60px;
+                        background-color: #177dff;
+                    }
                 }
             }
         }
@@ -3671,6 +3673,7 @@ body .layui-layer-title {
             width: 115px;
             flex-shrink: 0;
             .date {
+                .transition(all 0.5s);
                 line-height: 1;
                 font-size: 32px;
                 font-weight: 700;
@@ -3678,6 +3681,7 @@ body .layui-layer-title {
                 margin-bottom: 10px;
             }
             .year {
+                .transition(all 0.5s);
                 line-height: 1;
                 font-size: 16px;
                 font-weight: 700;
@@ -3686,9 +3690,11 @@ body .layui-layer-title {
         }
         .item-m {
             width: 800px;
+            flex-shrink: 0;
             overflow: hidden;
-            padding: 8px 138px 8px 60px;
+            padding: 8px 50px 8px 60px;
             position: relative;
+            .transition(all 0.5s);
             &:before {
                 content: '';
                 display: block;
@@ -3698,6 +3704,7 @@ body .layui-layer-title {
                 width: 30px;
                 height: 1px;
                 background-color: #333;
+                .transition(all 0.5s);
             }
             .item-m-tit {
                 font-weight: 700;
@@ -3708,6 +3715,7 @@ body .layui-layer-title {
             }
             .item-m-txt {
                 .text_hide(2);
+                width: 580px;
                 font-size: 14px;
                 color: #999999;
                 letter-spacing: 0;
@@ -3743,7 +3751,7 @@ body .layui-layer-title {
             width: 100%;
             height: 100%;
         }
-        .profile-txt-box{
+        .profile-txt-box {
             width: 900px;
             margin: 0 auto;
         }
@@ -4099,6 +4107,43 @@ body .layui-layer-title {
             // background-color: pink;
             width: 100%;
             height: 430px;
+        }
+    }
+}
+// 全局通用 (目前方案和案例的列表页和详情页才使用)
+.back-top-btn {
+    width: 56px;
+    height: 56px;
+    position: fixed;
+    bottom: 58px;
+    right: 54px;
+    z-index: 999;
+    background: url(../images/backtop-icon.png) center center/contain no-repeat;
+    .box-shadow(0 0 10px 0 rgba(0, 0, 0, 0.1));
+    .border-rds(5px);
+}
+.solution-page,
+.case-page {
+    .content {
+        position: relative;
+    }
+    .btn-back-list {
+        width: 100px;
+        height: 32px;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        border: 1px solid #dddddd;
+        font-size: 14px;
+        color: #666666;
+        background-color: #fff;
+        text-align: center;
+        line-height: 1;
+        .icon-img {
+            width: 12px;
+            height: 13px;
+            margin-right: 5px;
+            margin-top: -1px;
         }
     }
 }

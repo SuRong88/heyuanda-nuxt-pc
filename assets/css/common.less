@@ -1,29 +1,138 @@
-/**
- *  andy.css v2.0.0 | Used for Mobile(webApp) | 2016.11.11
- */
-@media (max-width: 1300px) {
+@media (max-width: 1499px) {
+    .product-page {
+        .sidebar {
+            width: 220px;
+            padding: 0 15px;
+            .sub-item{
+              font-size: 15px;
+                letter-spacing: -0.5px;
+            }
+            .item-title{
+                font-size: 16px;
+            }
+            .min-title{
+                font-size: 16px;
+            }
+            .min-sub-item{
+                font-size: 15px;
+                white-space: nowrap;
+            }
+        }
+    }
+    .index-page {
+        .index_swiper_four {
+            .list {
+                margin-top: 2.5%;
+            }
+            .swiper-container {
+                height: 380px;
+            }
+            .index_swiper_four_con .bg {
+                height: 365px;
+            }
+        }
+
+        .index_swiper_five_list {
+            width: 1200px;
+            margin: 3.4% auto 0;
+            li {
+                height: 230px;
+                .img {
+                    height: 48px;
+                    margin: 22% auto 0;
+                }
+                .text {
+                    margin-top: 10%;
+                }
+            }
+        }
+    }
+
     .product-page {
         .product-banner-p {
             padding-top: 110px;
+            padding-left: 120px;
             .p-main {
-                width: 750px;
+                width: 570px;
+            }
+            .p-tit {
+                font-size: 24px;
+            }
+            .p-txt {
+                font-size: 14px;
+                // margin-right: 10px;
             }
             .p-icon {
-                width: 80px;
-                height: 85px;
+                width: 70px;
+                height: 75px;
             }
             .p-desc {
-                width: 450px;
-                height: 90px;
+                width: 340px;
+                height: 60px;
+                font-size: 12px;
                 // font-size: 12px;
                 line-height: 20px;
+                // &.left,
+                padding: 10px 15px 0 20px !important;
+                &.right {
+                    padding: 10px 20px 0 15px !important;
+                }
+                // }
+                &.p-desc01 {
+                    left: 233px !important;
+                    top: 9px !important;
+                }
+                &.p-desc02 {
+                    left: 155px !important;
+                    top: 9px !important;
+                }
+                &.p-desc03 {
+                    left: 170px !important;
+                    top: 9px !important;
+                }
+                &.p-desc04 {
+                    right: 240px !important;
+                    top: 8px !important;
+                }
+                &.p-desc05 {
+                    right: 175px !important;
+                    top: 9px !important;
+                }
+                &.p-desc06 {
+                    right: 204px !important;
+                    top: 10px !important;
+                }
+            }
+            .p-item01 {
+                left: -155px;
+                top: 50px;
+            }
+            .p-item02 {
+                left: -115px;
+                top: 217px;
+            }
+            .p-item03 {
+                left: -64px;
+                top: 370px;
+            }
+            .p-item04 {
+                right: -151px;
+                top: 50px;
+            }
+            .p-item05 {
+                right: -134px;
+                top: 217px;
+            }
+            .p-item06 {
+                right: -88px;
+                top: 370px;
             }
         }
         .product-banner {
             width: auto;
             padding-left: 260px;
             height: 100%;
-            padding-top: 14%;
+            padding-top: 12%;
         }
         .banner-img-box {
             width: 450px;
@@ -33,40 +142,106 @@
             }
         }
         .banner-txt-box {
-            width: 360px;
+            width: 380px;
             margin-left: 50px;
-            padding-top: 7.8%;
+            padding-top: 7%;
             .banner-title {
-                font-size: 36px;
+                font-size: 24px;
                 color: #ffffff;
-                margin-bottom: 32px;
+                margin-bottom: 26px;
             }
             .banner-txt {
-                font-size: 20px;
+                font-size: 16px;
                 color: #ffffff;
                 text-align: justify;
-                line-height: 30px;
+                line-height: 26px;
             }
         }
     }
 }
-@media (min-width: 1300px) and (max-width: 1500px) {
+@media (min-width: 1500px) and (max-width: 1700px) {
+    .index-page {
+        .index_swiper_four {
+            .list {
+                margin-top: 2.5%;
+            }
+            .swiper-container {
+                height: 380px;
+            }
+            .index_swiper_four_con .bg {
+                height: 365px;
+            }
+        }
+    
+        .index_swiper_five_list {
+            // width: 1200px;
+            // margin: 3.4% auto 0;
+            li {
+                height: 280px;
+                .img {
+                    margin: 25% auto 0;
+                }
+                // .text {
+                //     margin-top: 10%;
+                // }
+            }
+        }
+    }
     // 公司产品
     .product-page {
         .product-banner-p {
-            padding-top: 110px;
+            padding-top: 120px;
+            padding-left: 150px;
+            .p-item01 {
+                top: 65px;
+            }
+            .p-item02 {
+                top: 250px;
+            }
+            .p-item03 {
+                left: -65px;
+                top: 435px;
+            }
+            .p-item04 {
+                top: 65px;
+            }
+            .p-item05 {
+                top: 250px;
+            }
+            .p-item06 {
+                right: -104px;
+                top: 435px;
+            }
             .p-main {
-                width: 750px;
+                width: 670px;
             }
             .p-icon {
                 width: 80px;
                 height: 85px;
             }
             .p-desc {
-                width: 450px;
+                width: 400px;
                 height: 90px;
                 // font-size: 12px;
                 line-height: 20px;
+                &.p-desc01{
+                    left: 266px;
+                }
+                &.p-desc02{
+                    left: 174px;
+                }
+                &.p-desc03{
+                    left: 188px;
+                }
+                &.p-desc04{
+                    right: 266px;
+                }
+                &.p-desc05{
+                    right: 193px;
+                }
+                &.p-desc06{
+                    right: 226px;
+                }
             }
         }
         .product-banner {
@@ -76,7 +251,7 @@
             padding-top: 13%;
         }
         .banner-img-box {
-            width: 550px;
+            width: 530px;
             // width: 32.7%;
             .banner-img {
                 width: 100%;
@@ -87,12 +262,12 @@
             margin-left: 6.2%;
             padding-top: 7.8%;
             .banner-title {
-                font-size: 36px;
+                font-size: 34px;
                 color: #ffffff;
-                margin-bottom: 32px;
+                margin-bottom: 28px;
             }
             .banner-txt {
-                font-size: 20px;
+                font-size: 18px;
                 color: #ffffff;
                 text-align: justify;
                 line-height: 30px;
@@ -114,7 +289,7 @@
 }
 
 // 1-10未合并处理(以下为首页)
-@media (max-width: 1500px) {
+@media (max-width: 1499px) {
     // html {font-size: 137.5%;}
     .index_swiper_four_con {
         .swiper-container {

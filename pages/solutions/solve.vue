@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc">
                 通过和元达大数据平台所具备的高性能大数据计算能力，丰富统计、 分析、挖掘模型功能，为行业全流程、全周期的生产运营活动提供一
@@ -57,6 +61,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

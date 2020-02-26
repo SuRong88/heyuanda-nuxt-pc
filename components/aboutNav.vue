@@ -37,6 +37,12 @@ export default {
     font-weight: 700;
     line-height: 60px;
     text-align: center;
+    -webkit-animation:all 0.5s;
+    -moz-animation: all 0.5s;
+    -ms-animation: all 0.5s;
+    -o-animation: all 0.5s;
+    animation: all 0.5s;
+    &:hover,
     &.is-actived {
         background: #177dff;
     }

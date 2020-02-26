@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">
                 基于用户在运营商侧的高质、实时行为与业务数据，运用和元达大数据分析平台，充分糅合用户通信、行为数据与用户位置数据，无论是在用户出行变化、交通工具使用习惯、人口密度变化、交通疏导数据支撑等都可以实现实时精准的全方面数据支撑，为政府、企业实现资源优化配置打造坚实的数据基石。
@@ -78,6 +82,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">
                 基于和元达大数据分析平台，通过对业务数据进行统计分析以发掘数据内在价值，优化业务环节，提升客户体验和用户粘度。通过客户价值分析和用户画像，实现多渠道、精准化、深度服务体系。
@@ -80,6 +84,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {

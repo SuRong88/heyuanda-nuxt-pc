@@ -129,20 +129,10 @@ export default {
                 },
                 onTransitionEnd: function(swiper) {
                     let realIndex = swiper.realIndex;
-                    console.log(realIndex);
                     that.$delete(that.list[realIndex], 'show');
                     that.$set(that.list[realIndex], 'show', true);
                     if (realIndex < 4) {
                         that.currentIndex = 0;
-                        // if (realIndex == 0) {
-                        //   that.currentSubIndex = 0
-                        // } else if (realIndex == 1) {
-                        //   that.currentSubIndex = 1
-                        // } else if (realIndex == 2) {
-                        //   that.currentSubIndex = 2
-                        // } else if (realIndex == 3) {
-                        //   that.currentSubIndex = 3
-                        // }
                         switch (realIndex) {
                             case 0:
                                 that.currentSubIndex = 0;
@@ -173,15 +163,6 @@ export default {
                                 that.currentSubIndex = 3;
                                 break;
                         }
-                        // if (realIndex == 4) {
-                        //   that.currentSubIndex = 0
-                        // } else if (realIndex == 5) {
-                        //   that.currentSubIndex = 1
-                        // } else if (realIndex == 6) {
-                        //   that.currentSubIndex = 2
-                        // } else if (realIndex == 7) {
-                        //   that.currentSubIndex = 3
-                        // }
                     } else {
                         that.currentIndex = 2;
                         switch (realIndex) {
@@ -192,11 +173,6 @@ export default {
                                 that.currentSubIndex = 1;
                                 break;
                         }
-                        // if (realIndex == 8) {
-                        //   that.currentSubIndex = 0
-                        // } else if (realIndex == 9) {
-                        //   that.currentSubIndex = 1
-                        // }
                     }
                 }
             },
@@ -278,15 +254,6 @@ export default {
             this.currentSubIndex = data.subIndex;
             let targetIndex;
             if (this.currentIndex == 0) {
-                // if (this.currentSubIndex == 0) {
-                //   targetIndex = 0
-                // } else if (this.currentSubIndex == 1) {
-                //   targetIndex = 1
-                // } else if (this.currentSubIndex == 2) {
-                //   targetIndex = 2
-                // } else {
-                //   targetIndex = 3
-                // }
                 switch (this.currentSubIndex) {
                     case 0:
                         targetIndex = 0;
@@ -302,15 +269,6 @@ export default {
                         break;
                 }
             } else if (this.currentIndex == 1) {
-                // if (this.currentSubIndex == 0) {
-                //   targetIndex = 4
-                // } else if (this.currentSubIndex == 1) {
-                //   targetIndex = 5
-                // } else if (this.currentSubIndex == 2) {
-                //   targetIndex = 6
-                // } else {
-                //   targetIndex = 7
-                // }
                 switch (this.currentSubIndex) {
                     case 0:
                         targetIndex = 4;
@@ -326,11 +284,6 @@ export default {
                         break;
                 }
             } else {
-                // if (this.currentSubIndex == 0) {
-                //   targetIndex = 8
-                // } else {
-                //   targetIndex = 9
-                // }
                 switch (this.currentSubIndex) {
                     case 0:
                         targetIndex = 8;

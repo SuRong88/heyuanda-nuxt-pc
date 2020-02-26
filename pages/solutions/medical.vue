@@ -5,6 +5,10 @@
             <h2 class="banner-title">{{ bannerTitle }}</h2>
         </div>
         <div class="content">
+            <nuxt-link to="/solutions" tag="button" class="btn-back-list flex flex-ver flex-align-center">
+                <img class="icon-img" src="@/assets/images/back-icon.png" alt="" />
+                返回列表
+            </nuxt-link>
             <h2 class="title">方案概述</h2>
             <div class="desc common-desc">基于和元达大数据分析平台，通过建立信息化、标准化、智能化的决策支持应用系统，方便医疗管理机构及医疗服务机构进行卫生管理和决策指导。</div>
             <img class="content-img" src="@/assets/images/solution/medical/t-img.png" alt="" />
@@ -60,6 +64,9 @@ export default {
     components: {
         vNav,
         vFooter
+    },
+    layout: function(context) {
+        return 'default02';
     },
     head() {
         return {
