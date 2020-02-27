@@ -57,9 +57,12 @@
                         <img src="@/assets/images/index_4_r.png" alt="" class="right" @click="fourNext" />
                         <swiper :options="fourOption" ref="fourSwiper">
                             <swiper-slide v-for="(item, index) in interface.four[frontend.fourListIndex]">
-                                <div class="box">
+                                <nuxt-link v-if="item.link" :to="item.link" class="box pointer">
                                     <img :src="item.img_url" alt="" />
-                                    <!-- <img src="@/assets/images/index_5_icon01_sel.png" alt="" class="img2"> -->
+                                    <p>{{ item.text }}</p>
+                                </nuxt-link>
+                                <div v-else class="box">
+                                    <img :src="item.img_url" alt="" />
                                     <p>{{ item.text }}</p>
                                 </div>
                             </swiper-slide>
@@ -77,7 +80,7 @@
 
                     <div class="con">
                         <ul class="index_swiper_five_list">
-                            <li v-for="item in frontend.fiveList">
+                            <nuxt-link tag="li" :to="item.link" v-for="item in frontend.fiveList">
                                 <div class="box">
                                     <div class="img">
                                         <img :src="item.img1" alt="" class="img1" />
@@ -90,7 +93,7 @@
 
                                     <img src="@/assets/images/index_5_img01.jpg" alt="" class="bg" />
                                 </div>
-                            </li>
+                            </nuxt-link>
                         </ul>
                     </div>
                     <v-footer></v-footer>
@@ -175,117 +178,111 @@ export default {
                     [
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-1.png'),
-                            text: '大数据智慧交通应用'
+                            text: '大数据智慧交通应用',
+                            link: '/products?index=1'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-2.png'),
-                            text: '大数据旅游分析应用'
+                            text: '大数据旅游分析应用',
+                            link: ''
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-3.png'),
-                            text: '大数据交通分析应用'
+                            text: '大数据交通分析应用',
+                            link: ''
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-4.png'),
-                            text: '大数据人口分析应用'
+                            text: '大数据人口分析应用',
+                            link: ''
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-5.png'),
-                            text: '大数据商圈分析应用'
+                            text: '大数据商圈分析应用',
+                            link: '/products?index=2'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon01-6.png'),
-                            text: '大数据地址分析应用'
+                            text: '大数据地址分析应用',
+                            link: ''
                         }
                     ],
                     [
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon02-1.png'),
-                            text: 'DMP平台'
+                            text: 'DMP平台',
+                            link: '/products?index=7'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon02-2.png'),
-                            text: '智慧容量专家'
+                            text: '智慧容量专家',
+                            link: '/products?index=6'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon02-3.png'),
-                            text: '大数据生产管理平台'
+                            text: '大数据生产管理平台',
+                            link: '/products?index=5'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon02-4.png'),
-                            text: '食品安全追溯系统（区块链）'
+                            text: '食品安全追溯系统（区块链）',
+                            link: '/products?index=3'
                         }
                     ],
                     [
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon03-1.png'),
-                            text: '和元达数据管理一体机'
+                            text: '和元达数据管理一体机',
+                            link: '/products?index=8'
                         },
                         {
                             img_url: require('@/assets/images/index/icon/index_4_icon03-2.png'),
-                            text: '机房统一监控系统TUMS'
+                            text: '机房统一监控系统TUMS',
+                            link: '/products?index=9'
                         }
                     ]
                 ]
             },
             frontend: {
-                nav: [
-                    {
-                        link: '',
-                        text: '首页'
-                    },
-                    {
-                        link: '',
-                        text: '公司产品'
-                    },
-                    {
-                        link: '',
-                        text: '解决方案'
-                    },
-                    {
-                        link: '',
-                        text: '成功案例'
-                    },
-                    {
-                        link: '',
-                        text: '关于我们'
-                    }
-                ],
-
                 fourList: ['SaaS', 'PaaS', 'IaaS'],
                 fourListIndex: 0,
                 fourListStyle: 0,
-
                 fiveList: [
                     {
                         img1: require('@/assets/images/index_5_icon01.png'),
                         img2: require('@/assets/images/index_5_icon01_sel.png'),
-                        text: '电信行业解决方案'
+                        text: '电信行业解决方案',
+                        link: '/solutions'
                     },
                     {
                         img1: require('@/assets/images/index_5_icon02.png'),
                         img2: require('@/assets/images/index_5_icon02_sel.png'),
-                        text: '金融'
+                        text: '金融',
+                        link: '/solutions'
                     },
                     {
                         img1: require('@/assets/images/index_5_icon03.png'),
                         img2: require('@/assets/images/index_5_icon03_sel.png'),
-                        text: '医疗'
+                        text: '医疗',
+                        link: '/solutions'
                     },
                     {
                         img1: require('@/assets/images/index_5_icon04.png'),
                         img2: require('@/assets/images/index_5_icon04_sel.png'),
-                        text: '环保'
+                        text: '环保',
+                        link: '/solutions'
                     },
                     {
                         img1: require('@/assets/images/index_5_icon05.png'),
                         img2: require('@/assets/images/index_5_icon05_sel.png'),
-                        text: '电商'
+                        text: '电商',
+                        link: '/solutions'
                     },
                     {
                         img1: require('@/assets/images/index_5_icon06.png'),
                         img2: require('@/assets/images/index_5_icon06_sel.png'),
-                        text: '交通'
+                        text: '交通',
+                        link: '/solutions'
                     }
                 ],
 
@@ -335,12 +332,8 @@ export default {
             },
 
             bannerOption: {
-                // autoplay : 5000,
                 simulateTouch: false,
-                // pagination: '.index_swiper_banner .swiper-pagination',
-                // paginationClickable :true,
                 autoplayDisableOnInteraction: false
-                // loop: true
             },
 
             fourOption: {
@@ -364,15 +357,6 @@ export default {
             // 切换的时候，色块移动
             this.frontend.fourListIndex = index;
             this.frontend.fourListStyle = ((410 - 54) / 2) * index;
-
-            // if (this.interface.four[index].length >= 3) {
-            //     console.log(1)
-            //     this.fourSwiper.destroyLoop()
-            // } else {
-            //     console.log(2)
-            //     this.fourSwiper.createLoop()
-            // }
-
             this.fourSwiper.update();
             this.fourSwiper.slideTo(1);
             this.fourSwiper.reLoop;

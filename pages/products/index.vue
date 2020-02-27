@@ -97,6 +97,12 @@ export default {
             return this.$store.state.webInfo;
         }
     },
+    // created() {
+    //     if(process.client) {
+    //         this.screenIndex = this.$route.query.index*1 || 0;
+    //         console.log(this.screenIndex);
+    //     }
+    // },
     async asyncData({ route, app }) {
         let seoKey = route.path;
         let [Res] = await Promise.all([
@@ -114,9 +120,11 @@ export default {
     },
     data() {
         let that = this;
+        let initialIndex = that.$route.query.index * 1 || 0;
         return {
             SEOInfo: {},
             swiperOption: {
+                initialSlide: initialIndex,
                 loop: false,
                 speed: 600,
                 direction: 'vertical',
@@ -124,11 +132,14 @@ export default {
                 simulateTouch: false,
                 onInit: function(swiper) {
                     setTimeout(() => {
-                        that.list[0].show = true;
+                        that.list[initialIndex].show = true;
                     }, 200);
                 },
                 onTransitionEnd: function(swiper) {
                     let realIndex = swiper.realIndex;
+                    let query = JSON.parse(JSON.stringify(that.$route.query));
+                    query.index = realIndex;
+                    that.$router.push({ query });
                     that.$delete(that.list[realIndex], 'show');
                     that.$set(that.list[realIndex], 'show', true);
                     if (realIndex < 4) {
