@@ -125,7 +125,7 @@ export default {
         // 导航栏显示背景颜色,fixed
         this.$fixHeader(this, 370);
         // 渲染地图
-        this.renderMap(23.09734984, 113.30348106);
+        this.renderMap(23.0992390000,113.2974700000);
     },
 
     data() {
