@@ -3402,9 +3402,10 @@ body .layui-layer-title {
         .about-title-cn {
             font-size: 34px;
             color: #000000;
-            margin-bottom: 16px;
+            // margin-bottom: 16px;
         }
         .about-title-en {
+            display: none !important;
             font-weight: 400;
             font-size: 18px;
             color: #999999;
@@ -3792,6 +3793,7 @@ body .layui-layer-title {
         margin-bottom: 16px;
     }
     .title-en {
+        display: none !important;
         font-weight: 400;
         font-size: 18px;
         color: #999999;
@@ -4008,7 +4010,7 @@ body .layui-layer-title {
     .content {
         padding-bottom: 160px;
         .about-title-box {
-            padding-bottom: 40px;
+            // padding-bottom: 40px;
         }
     }
     .main-box {
@@ -4034,12 +4036,31 @@ body .layui-layer-title {
 .about-contact {
     .content {
         padding-bottom: 90px;
+        // .contact-tit {
+        //     line-height: 190px;
+        //     font-size: 30px;
+        //     color: #000000;
+        //     text-align: center;
+        //     font-weight: 400;
+        // }
         .contact-tit {
-            line-height: 190px;
+            padding: 85px 0;
+        }
+        .contact-tit-cn {
             font-size: 30px;
             color: #000000;
             text-align: center;
             font-weight: 400;
+            margin-bottom: 10px;
+        }
+        .contact-tit-en {
+            // font-size: 30px;
+            // color: #000000;
+            // font-weight: 400;
+            text-align: center;
+            font-weight: 400;
+            font-size: 18px;
+            color: #999;
         }
         .contact-box {
             margin-bottom: 60px;

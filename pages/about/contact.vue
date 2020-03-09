@@ -13,7 +13,10 @@
                 <h2 class="about-title-cn">{{ titleCn }}</h2>
                 <h2 class="about-title-en">{{ titleEn }}</h2>
             </div> -->
-            <h2 class="contact-tit">和元达信息科技有限公司</h2>
+            <div class="contact-tit">
+                <h2 class="contact-tit-cn">和元达信息科技有限公司</h2>
+                <h2 class="contact-tit-en">TechViewInfo Co.,Ltd（TVI）</h2>
+            </div>
             <!-- 联系信息 -->
             <ul class="contact-box clear">
                 <li class="contact-item fl">

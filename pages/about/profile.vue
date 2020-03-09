@@ -11,9 +11,13 @@
         <div class="content">
             <div class="profile">
                 <div class="wrapper">
-                    <div class="title-box">
+                    <!-- <div class="title-box">
                         <h3 class="title-cn">公司简介</h3>
                         <h3 class="title-en">Company Profile</h3>
+                    </div> -->
+                    <div class="about-title-box">
+                        <h2 class="about-title-cn">{{ titleCn }}</h2>
+                        <h2 class="about-title-en">{{ titleEn }}</h2>
                     </div>
                     <div class="profile-txt-box">
                         <div class="profile-txt">和元达信息科技有限公司（简称“和元达科技”）成立于2012年4月，于2014年5月入驻中大科技园，注册资金5000万。</div>
@@ -203,7 +207,10 @@ export default {
             show: false,
             // banner标题
             bannerTitleCn: '精准，轻松致胜',
-            bannerTitleEn: 'Accuracy, Easy Business.'
+            bannerTitleEn: 'Accuracy, Easy Business.',
+            // 正文标题
+            titleCn: '公司简介',
+            titleEn: 'Company Profile'
         };
     }
 };
