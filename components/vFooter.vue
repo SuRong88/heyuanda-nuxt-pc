@@ -2,9 +2,10 @@
   <div class="v-footer">
     <div class="con">
       <div class="fl">
-        <img :src="webInfo.website_logo_bottom" alt="" class="logo" />
-        <!-- <img src="@/assets/images/footer_logo.png" alt="" class="logo" /> -->
-        <p class="text">{{webInfo.website_copyright}}{{webInfo.website_icp_numb}}</p>
+        <a  href="http://www.beian.miit.gov.cn" target="_blank">
+          <img :src="webInfo.website_logo_bottom" alt="" class="logo" />
+          <p class="text">{{webInfo.website_copyright}}{{webInfo.website_icp_numb}}</p>
+        </a>
       </div>
       <div class="fr">
         <div class="msg">
